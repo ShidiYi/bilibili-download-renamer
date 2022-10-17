@@ -20,12 +20,16 @@ try:
         for i in range(len(all_names)):
             for j in range(len(https_list)):
                 if all_names[i] in https_list[j]:
-                    print('将' + video_path + '\\' + all_names[i] + '替换为：' + video_path + '\\' + filename_list[j].replace(name_pop, ''))
-                    os.rename(video_path + '\\' + all_names[i], video_path + '\\' + filename_list[j].replace(name_pop, '').replace('\n', ''))
+                    try:
+                        os.rename(video_path + '\\' + all_names[i], video_path + '\\' +
+                                  filename_list[j].replace(name_pop, '').replace('\n', ''))
+                        print('将' + video_path + '\\' + all_names[i] + '替换为：' + video_path + '\\' +
+                              filename_list[j].replace(name_pop, ''))
+                    except:
+                        pass
     except:
         print('文件夹路径格式错误。')
 except:
     print('文件路径错误，找不到文件。')
+print('重命名完成！')
 
-
-# print(txt_tables)
