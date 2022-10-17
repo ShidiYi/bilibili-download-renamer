@@ -32,4 +32,4 @@ try:
 except:
     print('文件路径错误，找不到文件。')
 print('重命名完成！')
-
+input('输入‘Enter’键退出...')
